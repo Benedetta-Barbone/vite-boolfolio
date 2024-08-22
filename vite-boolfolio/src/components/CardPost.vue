@@ -1,12 +1,8 @@
 <script>
+
 import axios from 'axios';
-import CardPost from './CardPost.vue';
 
 export default {
-    name: 'AppMain',
-        components: {
-            CardPost
-    },
     data() {
         return{
             posts: [],
@@ -32,12 +28,38 @@ export default {
         this.getPosts();
     }
 }
-</script>
 
+</script>
 <template>
-    <CardPost />
+    <div class="card"   v-for="post in posts">
+        <h2> {{ post.author }}</h2>
+        <h3>{{post.title}}</h3>
+        <p>{{post.content}}</p>
+    </div>
 </template>
 
 <style>
 @import '../styles/general.scss';
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            margin: auto;
+        }
+
+
+        .card h3 {
+            margin: 0;
+            padding: 16px 0;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .card p {
+            padding: 0 16px 16px;
+            color: #333;
+        }
 </style>

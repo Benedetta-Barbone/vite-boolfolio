@@ -3,11 +3,9 @@
 </script>
 
 <template>
-    <h1>
-        ciao
-    </h1>
+
 </template>
 
 <style>
-
+@import '../styles/general.scss';
 </style>
